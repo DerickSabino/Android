@@ -12,14 +12,29 @@
         android:theme="@style/Theme.MeuApp"
         tools:targetApi="31">
         <activity
-            android:name=".ProdutoActivity"
+            android:name=".ListarProdutosActivity"
             android:exported="false" />
         <activity
-            android:name=".VendaActivity"
+            android:name=".ListaDoProduto"
             android:exported="false" />
+        <activity
+            android:name=".btnListarProdutos"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.ListarProdutosActivity"
+            android:exported="false"
+            android:label="Lista de produtos" />
+        <activity
+            android:name=".Activities.ProdutoActivity"
+            android:exported="false"
+            android:label="Cadastro de produtos" />
+        <activity
+            android:name=".Activities.VendaActivity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label="Cadastro">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

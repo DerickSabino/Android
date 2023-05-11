@@ -5,27 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".Activities.ListarProdutosActivity">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="25dp"/>
-
-
-    <Button
-        android:id="@+id/btnCadastroProduto"
-        android:text="@string/Lista"
+    <ListView
+        android:id="@+id/lsvProdutos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/meuBotao"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/Cadastro" />
-
-
-
 
 
 </LinearLayout>
