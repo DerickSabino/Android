@@ -47,10 +47,7 @@ public class ProdutoDAO {
 
     public List<Produto> getListaProdutosDAO() {
 
-
-
         List<Produto> listaProdutos = new ArrayList<>();
-
         SQLiteDatabase db = null;
         Cursor cursor;
 
@@ -60,16 +57,15 @@ public class ProdutoDAO {
             db = this.conexaoSQLite.getReadableDatabase();
             cursor = db.rawQuery(query, null);
             if (cursor.moveToFirst()){
-                Produto produto = null;
 
                 do{
-                     produto = new Produto();
-                     produto.setId(cursor.getLong(0));
-                     produto.setNome(cursor.getString(1));
-                     produto.setQuantidadeEmEstoque(cursor.getInt(2));
-                     produto.setPreco(cursor.getDouble(3));
+                    Produto produto = new Produto();
+                    produto.setId(cursor.getLong(0));
+                    produto.setNome(cursor.getString(1));
+                    produto.setQuantidadeEmEstoque(cursor.getInt(2));
+                    produto.setPreco(cursor.getDouble(3));
 
-                     listaProdutos.add(produto);
+                    listaProdutos.add(produto);
 
                 }while (cursor.moveToNext());
             }
@@ -86,6 +82,7 @@ public class ProdutoDAO {
         return listaProdutos;
 
     }
+
 }
 
 

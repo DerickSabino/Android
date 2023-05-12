@@ -73,19 +73,15 @@
             android:id="@+id/radio_button_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Opção 1" />
+            android:text="Produto Nacional" />
 
         <RadioButton
             android:id="@+id/radio_button_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Opção 2" />
+            android:text="Produto Importado" />
 
-        <RadioButton
-            android:id="@+id/radio_button_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Opção 3" />
+
 
     </RadioGroup>
 

@@ -31,6 +31,8 @@ public class ListarProdutosActivity extends AppCompatActivity {
 
         //buscar produtos no banco
         ProdutoCtrl produtoCtrl = new ProdutoCtrl(ConexaoSQLite.getInstancia(ListarProdutosActivity.this));
+        List<Produto> listaProdutos = produtoCtrl.getListaProdutoCtrl();
+
 
 
         this.lsvProduto = (ListView) findViewById(R.id.lsvProdutos);

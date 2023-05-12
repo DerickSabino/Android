@@ -5,6 +5,8 @@ import com.example.meuapp.DAO.ProdutoDAO;
 import com.example.meuapp.MODEL.Produto;
 import com.example.meuapp.dbHelper.ConexaoSQLite;
 
+import java.util.List;
+
 public class ProdutoCtrl extends ListarProdutosActivity {
 
     private final ProdutoDAO produtoDAO;
@@ -13,7 +15,11 @@ public class ProdutoCtrl extends ListarProdutosActivity {
         produtoDAO = new ProdutoDAO(pConexaoSQLite);
 
 }
-public long salvarProdutoCtrl (Produto pProduto){
+    public long salvarProdutoCtrl (Produto pProduto){
     return this.produtoDAO.salvarProdutoDAO(pProduto);
 }
+    public List<Produto> getListaProdutoCtrl(){
+        return this.produtoDAO.getListaProdutosDAO();
+    }
+
  }

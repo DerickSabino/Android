@@ -2,8 +2,9 @@
 <resources>
 
     <string name="app_name">MyApp</string>
-    <string name="Lista">Product list!</string>
-    <string name="Cadastro">Product registration</string>
+    <string name="Cadastro">Product list!</string>
+    <string name="Lista">Product registration</string>
+
 
 
 </resources>

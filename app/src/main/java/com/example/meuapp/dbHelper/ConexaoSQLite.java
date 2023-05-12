@@ -4,15 +4,12 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class  ConexaoSQLite extends SQLiteOpenHelper {
+public class  ConexaoSQLite extends SQLiteOpenHelper  {
 
     private static ConexaoSQLite INSTANCIA_CONEXAO;
-    private static final int VERSAO_DB = 1;
-    private static final String NOME_DB  = "bl_produtos_app";
 
-    public ConexaoSQLite (Context context) {
-        super (context, NOME_DB, null, VERSAO_DB);
-    }
+    private static final String NOME_BANCO_DADOS = "meu_banco_de_dados.db";
+    private static final int VERSAO_BANCO_DADOS = 1;
 
     public static ConexaoSQLite getInstancia (Context context) {
         if (INSTANCIA_CONEXAO == null){
@@ -21,7 +18,9 @@ public class  ConexaoSQLite extends SQLiteOpenHelper {
         return INSTANCIA_CONEXAO;
     }
 
-
+    private ConexaoSQLite(Context context) {
+        super(context, NOME_BANCO_DADOS, null, VERSAO_BANCO_DADOS);
+    }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDataBase) {
@@ -31,18 +30,11 @@ public class  ConexaoSQLite extends SQLiteOpenHelper {
                         "(" +
                         "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         "nome TEXT, " +
-                        "quantidade_em_estoque INTEGER, " +
-                        "preco REAL" +
+                        "quantidade_em_estoque INTEGER" +
                         ")";
-
-
-
         sqLiteDataBase.execSQL(sqlTabelaProduto);
 
-        String sqlAlterTableProduto =
-                "ALTER TABLE IF EXISTS produto " +
-                        "ADD COLUMN preco REAL";
-
+        String sqlAlterTableProduto = "ALTER TABLE produto ADD COLUMN preco REAL";
         sqLiteDataBase.execSQL(sqlAlterTableProduto);
 
     }
@@ -51,5 +43,5 @@ public class  ConexaoSQLite extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDataBase, int i, int i1) {
 
     }
-
 }
+

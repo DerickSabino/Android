@@ -1,3 +1,4 @@
+
 package com.example.meuapp;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,8 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
-import android.widget.RadioGroup;
 
 import com.example.meuapp.Activities.ProdutoActivity;
 import com.example.meuapp.MODEL.Produto;
@@ -20,8 +19,6 @@ public class MainActivity extends AppCompatActivity {
     private Button btnCadastroProduto;
     private Button btnListarProdutos;
     private Button meuBotao;
-    private RadioGroup radioGroup;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,20 +37,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-        //produto feito na mao
-        Produto produto1 = new Produto();
-        produto1.setId(123455);
-        produto1.setNome("Computador");
-        produto1.setQuantidadeEmEstoque(50);
-        produto1.setPreco(1500);
-
-        ProdutoCtrl produtoCtrl = new ProdutoCtrl(conexaoSQLite);
-        long resultado = produtoCtrl.salvarProdutoCtrl(produto1);
-
-        System.out.println("resultado = " + resultado);
-
         this.btnCadastroProduto = (Button) findViewById(R.id.btnCadastroProduto);
 
         this.btnCadastroProduto.setOnClickListener(new View.OnClickListener() {
@@ -63,21 +46,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        radioGroup = findViewById(R.id.radio_group);
-
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId) {
-                    case R.id.radio_button_1:
-                        break;
-                    case R.id.radio_button_2:
-                        break;
-                    case R.id.radio_button_3:
-                        break;
-                }
-            }
-        });
     }
+
+
+
 }
+
+
+
+

@@ -3,7 +3,7 @@
 
 
     <string name="app_name">Mi aplicación</string>
-    <string name="Lista">¡Lista de productos!</string>
     <string name="Cadastro">Registración del producto</string>
+    <string name="Lista">¡Lista de productos!</string>
 
 </resources>
